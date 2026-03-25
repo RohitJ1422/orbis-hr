@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$orbis-primary: mat.define-palette(mat.$indigo-palette);
+$orbis-accent: mat.define-palette(mat.$deep-orange-palette, A200, A100, A400);
+
+$orbis-theme: mat.define-light-theme((
+  color: (
+    primary: $orbis-primary,
+    accent: $orbis-accent,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.all-component-themes($orbis-theme);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background: #fafafa;
+}
+
+mat-card {
+  border-radius: 12px !important;
+}
